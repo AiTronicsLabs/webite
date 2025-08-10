@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AITronics — Launching Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#10B981" />
+  <style>
+    :root{
+      --bg: #ffffff;
+      --green: #10B981; /* primary green */
+      --green-dark: #0f9a67;
+      --black: #0b0b0b;
+      --muted: #6b7280;
+      --glass: rgba(255,255,255,0.7);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 40%), radial-gradient(800px 400px at 10% 10%, rgba(16,185,129,0.06), transparent 15%), radial-gradient(600px 300px at 90% 90%, rgba(0,0,0,0.03), transparent 15%);
+      color:var(--black);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 20px;
+    }
+
+    .card{
+      width:100%;
+      max-width:980px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.9));
+      border-radius:18px;
+      box-shadow:0 10px 40px rgba(12,20,30,0.08);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:0;
+      backdrop-filter: blur(6px) saturate(120%);
+    }
+
+    /* left */
+    .hero{
+      padding:44px 48px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--green),var(--green-dark));
+      display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;letter-spacing:0.6px;
+      box-shadow:0 6px 18px rgba(16,185,129,0.18);
+    }
+    .brand h1{margin:0;font-size:20px;line-height:1}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    .headline{
+      margin-top:6px;
+      font-size:34px;font-weight:800;line-height:1.02;color:var(--black);
+    }
+    .sub{color:var(--muted);font-size:15px;max-width:46ch}
+
+    .countdown{
+      display:flex;gap:12px;margin-top:6px;align-items:center
+    }
+    .timebox{
+      background:rgba(11,11,11,0.03);padding:14px 18px;border-radius:10px;min-width:76px;text-align:center;
+      box-shadow:inset 0 -1px 0 rgba(255,255,255,0.6);
+    }
+    .timebox strong{display:block;font-size:18px}
+    .timebox span{color:var(--muted);font-size:12px}
+
+    .actions{display:flex;gap:12px;align-items:center;margin-top:16px}
+    .email-wrap{display:flex;gap:8px;width:100%}
+    input[type="email"]{flex:1;padding:12px 14px;border-radius:12px;border:1px solid rgba(11,11,11,0.06);font-size:14px}
+    button.primary{background:var(--green);border:none;padding:12px 16px;border-radius:12px;color:white;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(16,185,129,0.14)}
+    button.ghost{background:transparent;border:1px solid rgba(11,11,11,0.06);padding:12px 14px;border-radius:12px;cursor:pointer}
+
+    .features{display:flex;gap:18px;margin-top:22px;flex-wrap:wrap}
+    .feature{display:flex;gap:10px;align-items:flex-start;min-width:150px}
+    .feature svg{width:28px;height:28px;flex-shrink:0}
+    .feature p{margin:0;font-size:13px;color:var(--muted)}
+
+    /* right panel */
+    .right{
+      background:linear-gradient(180deg, rgba(16,185,129,0.04), rgba(11,11,11,0.03));
+      padding:28px;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;min-height:360px
+    }
+    .right h3{margin:0;font-size:18px}
+    .device-hero{width:100%;height:220px;border-radius:12px;background-image:linear-gradient(135deg, rgba(16,185,129,0.12), rgba(0,0,0,0.02));display:flex;align-items:center;justify-content:center;flex-direction:column;padding:18px}
+    .device-hero p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    .footer{display:flex;gap:12px;align-items:center;font-size:13px;color:var(--muted);margin-top:10px}
+    .socials{margin-left:auto;display:flex;gap:10px}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(11,11,11,0.03);text-decoration:none}
+
+    /* responsive */
+    @media (max-width:900px){
+      .card{grid-template-columns:1fr;}
+      .right{order:2}
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="region" aria-labelledby="headline">
+    <div class="hero">
+      <div class="brand">
+        <div class="logo" aria-hidden>AT</div>
+        <div>
+          <h1>AITronics</h1>
+          <p>Energy equipment · Solar EPC · Design services</p>
+        </div>
+      </div>
+
+      <h2 id="headline" class="headline">We’re launching something electrifying ⚡</h2>
+      <p class="sub">AITronics builds smart energy equipment and offers Solar EPC & design services. Our new website is coming soon — sign up to get the launch update and early access.</p>
+
+      <div class="countdown" aria-hidden>
+        <div class="timebox"><strong id="days">00</strong><span>Days</span></div>
+        <div class="timebox"><strong id="hours">00</strong><span>Hours</span></div>
+        <div class="timebox"><strong id="mins">00</strong><span>Mins</span></div>
+        <div class="timebox"><strong id="secs">00</strong><span>Secs</span></div>
+      </div>
+
+      <div class="actions" role="form" aria-label="Notify me">
+        <div class="email-wrap">
+          <input id="email" type="email" placeholder="Your email address" aria-label="email address">
+          <button id="notifyBtn" class="primary">Notify Me</button>
+        </div>
+        <button class="ghost" id="learnBtn">Learn More</button>
+      </div>
+
+      <div class="features" aria-hidden>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v6" stroke="#10B981" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12h12" stroke="#0f172a" stroke-opacity="0.6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><strong>Products</strong><p>Industrial & residential energy devices</p></div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18" stroke="#0f172a" stroke-opacity="0.6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 6l4 6 4-6" stroke="#10B981" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><strong>Services</strong><p>Solar EPC, system design & consulting</p></div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#0f172a" stroke-opacity="0.6" stroke-width="1.6"/><path d="M8 12h8" stroke="#10B981" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <div><strong>Support</strong><p>Pre-sales and post-sales assistance</p></div>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;color:var(--muted);font-size:13px">Want a preview or a quote? Click <a href="#" id="quoteLink">here</a>.</div>
+    </div>
+    <aside class="right" aria-label="Preview panel">
+      <h3>Product preview</h3>
+      <div class="device-hero">
+        <svg width="92" height="92" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <rect width="20" height="14" x="2" y="5" rx="2" stroke="#0b0b0b" stroke-opacity="0.12" stroke-width="1.6"/>
+          <rect x="6" y="8" width="6" height="6" rx="1" fill="#10B981" />
+        </svg>
+        <p>Smart Energy Controller — prototype</p>
+      </div>
+
+      <div class="footer">
+        <div>© <strong>AITronics</strong> — All rights reserved</div>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-14h4v2" stroke="#0b0b0b" stroke-opacity="0.7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M23 3s-1 4-5 6c0 0 4 0 4 3 0 6-7 8-12 8-4 0-8-3-8-8 0-1 0-2 1-3-6 0-6-5-6-5s3 1 6 1c0 0 1-5 7-5 3 0 5 2 5 2z" stroke="#0b0b0b" stroke-opacity="0.6" stroke-width="1.2"/></svg>
+          </a>
+          <a href="#" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 8l8 6 10-6" stroke="#0b0b0b" stroke-opacity="0.6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="4" width="20" height="16" rx="2" stroke="#0b0b0b" stroke-opacity="0.06" stroke-width="1.2"/></svg>
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    // ----- Countdown -----
+    // Default: 30 days from now
+    const launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 30);
+
+    function pad(v){return String(v).padStart(2,'0')}
+    function updateCountdown(){
+      const now = new Date();
+      const diff = Math.max(0, launchDate - now);
+      const secs = Math.floor(diff/1000) % 60;
+      const mins = Math.floor(diff/1000/60) % 60;
+      const hours = Math.floor(diff/1000/3600) % 24;
+      const days = Math.floor(diff/1000/3600/24);
+      document.getElementById('days').textContent = pad(days);
+      document.getElementById('hours').textContent = pad(hours);
+      document.getElementById('mins').textContent = pad(mins);
+      document.getElementById('secs').textContent = pad(secs);
+    }
+    updateCountdown();
+    setInterval(updateCountdown,1000);
+
+    // ----- Email (client-only) -----
+    const notifyBtn = document.getElementById('notifyBtn');
+    notifyBtn.addEventListener('click',()=>{
+      const email = document.getElementById('email').value.trim();
+      if(!email || !email.includes('@')){
+        alert('Please enter a valid email address');
+        return;
+      }
+      // For now we just show a simple confirmation — integrate with your backend or Mailchimp later.
+      notifyBtn.textContent = 'Saved ✓';
+      notifyBtn.disabled = true;
+      document.getElementById('email').value = '';
+    });
+
+    document.getElementById('learnBtn').addEventListener('click',()=>{
+      alert('Thanks for your interest! You can contact us at sales@aitronics.example (replace with your email)');
+    });
+
+    document.getElementById('quoteLink').addEventListener('click',(e)=>{e.preventDefault();alert('Please contact us at sales@aitronics.example to request a quote — replace with your email.');});
+  </script>
+</body>
+</html>
